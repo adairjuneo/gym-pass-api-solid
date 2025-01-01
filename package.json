@@ -8,8 +8,8 @@
     "start": "node --env-file=.env build/index.js",
     "build": "tsup src --out-dir build",
     "prepare": "husky",
-    "prettier:check": "npx prettier . --check",
-    "prettier:format": "npx prettier . --write"
+    "prettier:fix": "npx prettier . --write",
+    "prettier:check": "npx prettier . --check"
   },
   "keywords": [],
   "author": "Adair Juneo",
@@ -18,6 +18,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@prisma/client": "6.1.0",
     "chalk": "5.4.1",
     "fastify": "5.2.0",
     "zod": "3.24.1"
@@ -27,11 +28,13 @@
     "@types/node": "22.10.3",
     "eslint": "9.17.0",
     "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "globals": "15.14.0",
     "husky": "9.1.7",
     "lint-staged": "15.3.0",
     "prettier": "3.4.2",
+    "prisma": "6.1.0",
     "tsup": "8.3.5",
     "tsx": "4.19.2",
     "typescript": "5.7.2",
