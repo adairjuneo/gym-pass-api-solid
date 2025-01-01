@@ -2,7 +2,6 @@
 build
 coverage
 drizzle
-prisma
 
 node_modules
 dist

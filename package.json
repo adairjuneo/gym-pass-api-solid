@@ -9,7 +9,10 @@
     "build": "tsup src --out-dir build",
     "prepare": "husky",
     "prettier:fix": "npx prettier . --write",
-    "prettier:check": "npx prettier . --check"
+    "prettier:check": "npx prettier . --check",
+    "prisma:dev": "npx prisma migrate dev",
+    "prisma:studio": "npx prisma studio",
+    "prisma:generate": "npx prisma generate"
   },
   "keywords": [],
   "author": "Adair Juneo",

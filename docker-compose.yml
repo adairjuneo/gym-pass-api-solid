@@ -1,5 +1,5 @@
 services:
-  gym-pass-pg:
+  pg-gym-pass:
     image: bitnami/postgresql:latest
     ports:
       - '5432:5432'
