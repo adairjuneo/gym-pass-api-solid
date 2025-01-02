@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "GymPass api with SOLID principals.",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch --env-file=.env src/index.ts",
     "start": "node --env-file=.env build/index.js",
@@ -24,10 +25,12 @@
     "@prisma/client": "6.1.0",
     "chalk": "5.4.1",
     "fastify": "5.2.0",
+    "lodash": "4.17.21",
     "zod": "3.24.1"
   },
   "devDependencies": {
     "@eslint/js": "9.17.0",
+    "@types/lodash": "4.17.13",
     "@types/node": "22.10.3",
     "eslint": "9.17.0",
     "eslint-config-prettier": "9.1.0",

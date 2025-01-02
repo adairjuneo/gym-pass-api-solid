@@ -1,0 +1,13 @@
+{
+  "gymPassApi": "GymPass API with SOLID principles.",
+  "labels": {
+    "name": "Name",
+    "email": "Email"
+  },
+  "validation": {
+    "min": "Minimum of {{min}} characters",
+    "max": "Mínimo de {{max}} characters.",
+    "required": "Required.",
+    "email": "Must be valid e-mail."
+  }
+}

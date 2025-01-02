@@ -1,6 +1,6 @@
 # GymPass Api 🏋️💪 - Software Design
 
-GymPass api with SOLID principals.
+GymPass api with SOLID principles.
 
 ## RFs (Requisitos Funcionais)
 

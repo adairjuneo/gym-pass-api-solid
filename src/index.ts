@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import chalk from 'chalk';
 
 import { app } from '@/app';
@@ -9,5 +10,5 @@ app
     port: env.PORT,
   })
   .then(() => {
-    console.log(chalk.greenBright('🟢 HTTP Server Running!'));
+    console.info(chalk.greenBright('🟢 HTTP Server Running!'));
   });
