@@ -13,7 +13,9 @@
     "prettier:check": "npx prettier . --check",
     "prisma:dev": "npx prisma migrate dev",
     "prisma:studio": "npx prisma studio",
-    "prisma:generate": "npx prisma generate"
+    "prisma:generate": "npx prisma generate",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [],
   "author": "Adair Juneo",
