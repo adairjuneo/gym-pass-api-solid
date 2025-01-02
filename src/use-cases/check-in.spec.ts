@@ -4,18 +4,20 @@ import { InMemoryCheckInRepository } from '@/repositories/in-memory/in-memory-ch
 import { InMemoryGymRepository } from '@/repositories/in-memory/in-memory-gym.repository';
 
 import { CheckInUseCase } from './check-in.usecase';
+import { MaxDistanceError } from './errors/max-distance.error';
+import { MaxNumberCheckInReachedError } from './errors/max-number-check-in-reached.error';
 
 let checkInRepository: InMemoryCheckInRepository;
 let gymRepository: InMemoryGymRepository;
 let checkInUseCase: CheckInUseCase;
 
 describe('Check In Use Case', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     checkInRepository = new InMemoryCheckInRepository();
     gymRepository = new InMemoryGymRepository();
     checkInUseCase = new CheckInUseCase(checkInRepository, gymRepository);
 
-    gymRepository.create({
+    await gymRepository.create({
       id: 'gym-test-01',
       name: 'Gym Teste 01',
       description: 'Gym Teste',
@@ -81,7 +83,7 @@ describe('Check In Use Case', () => {
         userLatitude: -16.718085,
         userLongitude: -43.825964,
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(MaxNumberCheckInReachedError);
   });
 
   it('should be able to check in on closer gym', async () => {
@@ -103,6 +105,6 @@ describe('Check In Use Case', () => {
         userLatitude: -16.711991,
         userLongitude: -43.831511,
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(MaxDistanceError);
   });
 });

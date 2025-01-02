@@ -18,12 +18,12 @@ export class InMemoryGymRepository implements GymRepository {
 
   async create(data: Prisma.GymUncheckedCreateInput): Promise<Gym> {
     const gym = {
-      id: data.id || randomUUID(),
+      id: data.id ?? randomUUID(),
       name: data.name,
-      description: data.description || null,
-      phone: data.phone || null,
-      latitude: new Decimal(Number(data.latitude)),
-      longitude: new Decimal(Number(data.longitude)),
+      description: data.description ?? null,
+      phone: data.phone ?? null,
+      latitude: new Decimal(data.latitude.toString()),
+      longitude: new Decimal(data.longitude.toString()),
       createdAt: new Date(),
       updatedAt: new Date(),
     };

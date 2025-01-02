@@ -10,6 +10,7 @@ software nasça dentro de uma empresa. **Deve ser possível...**
 
 - [x] Deve ser possível se cadastrar;
 - [x] Deve ser possível se autenticar;
+- [x] Deve ser possível cadastrar uma academia;
 - [x] Deve ser possível obter o perfil de um usuário logado;
 - [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
 - [ ] Deve ser possível o usuário obter seu histórico de check-ins;
@@ -17,7 +18,6 @@ software nasça dentro de uma empresa. **Deve ser possível...**
 - [ ] Deve ser possível o usuário buscar academias pelo nome;
 - [x] Deve ser possível o usuário realizar check-ins em uma academia;
 - [ ] Deve ser possível validar o check-in de um usuário;
-- [ ] Deve ser possível cadastrar uma academia;
 
 ## RNs (Regras de Negócio)
 
@@ -27,9 +27,9 @@ requisito funcional pode ou não ser executado. **O usuário não pode/deve...**
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
 - [x] O usuário não pode fazer 2 check-ins no mesmo dia;
 - [x] O usuário não pode fazer check-ins se não estiver perto(100m) da academia;
+- [ ] Academias só podem ser cadastradas por administradores;
 - [ ] O check-in só pode ser validado até 20 minutos após criado;
 - [ ] O check-in só pode ser validado por administradores;
-- [ ] Academias só podem ser cadastradas por administradores;
 
 ## RNFs (Requisitos não-funcionais)
 
