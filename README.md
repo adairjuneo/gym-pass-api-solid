@@ -10,12 +10,12 @@ software nasça dentro de uma empresa. **Deve ser possível...**
 
 - [x] Deve ser possível se cadastrar;
 - [x] Deve ser possível se autenticar;
-- [ ] Deve ser possível obter o perfil de um usuário logado;
+- [x] Deve ser possível obter o perfil de um usuário logado;
 - [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
 - [ ] Deve ser possível o usuário obter seu histórico de check-ins;
 - [ ] Deve ser possível o usuário buscar academias próximas;
 - [ ] Deve ser possível o usuário buscar academias pelo nome;
-- [ ] Deve ser possível o usuário realizar check-ins em uma academia;
+- [x] Deve ser possível o usuário realizar check-ins em uma academia;
 - [ ] Deve ser possível validar o check-in de um usuário;
 - [ ] Deve ser possível cadastrar uma academia;
 
@@ -25,9 +25,9 @@ Caminhos que cada requisito funcional pode seguir, determinando sobre quais cond
 requisito funcional pode ou não ser executado. **O usuário não pode/deve...** ou **A "entidade" não pode/deve...**
 
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
-- [ ] O usuário não pode fazer 2 check-ins no mesmo dia;
-- [ ] O usuário não pode fazer check-ins se não estiver perto(100m) da academia;
-- [ ] O check-in só pode ser validado até 20minutos após criado;
+- [x] O usuário não pode fazer 2 check-ins no mesmo dia;
+- [x] O usuário não pode fazer check-ins se não estiver perto(100m) da academia;
+- [ ] O check-in só pode ser validado até 20 minutos após criado;
 - [ ] O check-in só pode ser validado por administradores;
 - [ ] Academias só podem ser cadastradas por administradores;
 
