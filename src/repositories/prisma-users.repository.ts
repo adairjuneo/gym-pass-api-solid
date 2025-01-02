@@ -5,6 +5,16 @@ import { db } from '@/lib/db';
 import type { UsersRepository } from './interfaces/interface-users.repository';
 
 export class PrismaUsersRepository implements UsersRepository {
+  async findById(id: string): Promise<User | null> {
+    const user = await db.user.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    return user;
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     const user = await db.user.findUnique({
       where: {
