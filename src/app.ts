@@ -3,8 +3,10 @@ import path from 'node:path';
 
 import fastify from 'fastify';
 import _ from 'lodash';
+import { ZodError } from 'zod';
 
-import { createUser, getUsers } from '@/http';
+import { env } from './env';
+import { appRoutes } from './http/routes';
 
 export const app = fastify({ logger: true });
 
@@ -43,5 +45,18 @@ app.addHook('preHandler', (req, _reply, done) => {
 });
 
 // Routes
-app.register(createUser);
-app.register(getUsers);
+app.register(appRoutes);
+
+app.setErrorHandler((error, _request, reply) => {
+  if (error instanceof ZodError) {
+    return reply.status(400).send({ message: 'Validation error.', fields: error.format() });
+  }
+
+  if (env.NODE_ENV !== 'production') {
+    console.error(error);
+  } else {
+    // Log to an external tool.
+  }
+
+  return reply.status(500).send({ message: 'Internal server error.' });
+});

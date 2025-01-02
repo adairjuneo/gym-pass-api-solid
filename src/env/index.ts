@@ -7,6 +7,7 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3333),
   DATABASE_URL: z.string().min(1),
   JWT_SECRET: z.string().min(1),
+  AUTH_SALT_PASSWORD_HASH: z.coerce.number().max(6),
   AUTH_KEY_EXPIRATION_SECONDS: z.coerce.number().min(120),
 });
 
