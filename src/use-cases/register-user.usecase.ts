@@ -2,7 +2,7 @@ import { User } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
 import { env } from '@/env';
-import { UsersRepository } from '@/repositories/interfaces/interface-users.repository';
+import { UsersRepository } from '@/repositories/interfaces/users.interface';
 
 import { UserAlreadyExistsError } from './errors/user-already-exists.error';
 

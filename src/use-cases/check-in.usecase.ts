@@ -1,8 +1,8 @@
 import { CheckIn } from '@prisma/client';
 
 import { env } from '@/env';
-import { CheckInRepository } from '@/repositories/interfaces/interface-check-in.repository';
-import { GymRepository } from '@/repositories/interfaces/interface-gym.repository';
+import { CheckInRepository } from '@/repositories/interfaces/check-in.interface';
+import { GymRepository } from '@/repositories/interfaces/gym.interface';
 import { getDistanceBetweenCoordinates } from '@/utils/get-distance-between-coordinates';
 
 import { MaxDistanceError } from './errors/max-distance.error';

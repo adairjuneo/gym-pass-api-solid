@@ -6,7 +6,7 @@ import { Decimal } from '@prisma/client/runtime/library';
 import { env } from '@/env';
 import { getDistanceBetweenCoordinates } from '@/utils/get-distance-between-coordinates';
 
-import { GymRepository } from '../interfaces/interface-gym.repository';
+import { GymRepository } from '../interfaces/gym.interface';
 
 export class InMemoryGymRepository implements GymRepository {
   public items: Gym[] = [];

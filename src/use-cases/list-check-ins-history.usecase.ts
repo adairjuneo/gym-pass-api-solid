@@ -1,6 +1,6 @@
 import { CheckIn } from '@prisma/client';
 
-import { CheckInRepository } from '@/repositories/interfaces/interface-check-in.repository';
+import { CheckInRepository } from '@/repositories/interfaces/check-in.interface';
 
 interface ListCheckInsHistoryUseCaseRequest {
   userId: string;

@@ -2,7 +2,7 @@ import { Prisma, type User } from '@prisma/client';
 
 import { db } from '@/lib/db';
 
-import type { UsersRepository } from './interfaces/interface-users.repository';
+import { UsersRepository } from '../interfaces/users.interface';
 
 export class PrismaUsersRepository implements UsersRepository {
   async findById(id: string): Promise<User | null> {

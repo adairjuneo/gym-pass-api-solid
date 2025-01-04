@@ -1,6 +1,6 @@
 import { User } from '@prisma/client';
 
-import { UsersRepository } from '@/repositories/interfaces/interface-users.repository';
+import { UsersRepository } from '@/repositories/interfaces/users.interface';
 
 import { ResourceNotFoundError } from './errors/resource-not-found.error';
 

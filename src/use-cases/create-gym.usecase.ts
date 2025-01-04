@@ -1,6 +1,6 @@
 import { Gym } from '@prisma/client';
 
-import { GymRepository } from '@/repositories/interfaces/interface-gym.repository';
+import { GymRepository } from '@/repositories/interfaces/gym.interface';
 
 interface CreateGymUseCaseRequest {
   name: string;

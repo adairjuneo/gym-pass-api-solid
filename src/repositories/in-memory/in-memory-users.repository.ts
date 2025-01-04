@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 
 import { Prisma, User } from '@prisma/client';
 
-import { UsersRepository } from '../interfaces/interface-users.repository';
+import { UsersRepository } from '../interfaces/users.interface';
 
 export class InMemoryUsersRepository implements UsersRepository {
   public items: User[] = [];

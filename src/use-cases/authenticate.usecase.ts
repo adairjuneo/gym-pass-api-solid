@@ -1,7 +1,7 @@
 import { User } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
-import { UsersRepository } from '@/repositories/interfaces/interface-users.repository';
+import { UsersRepository } from '@/repositories/interfaces/users.interface';
 
 import { InvalidCredentialsError } from './errors/invalid-credentials.error';
 
