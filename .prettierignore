@@ -2,11 +2,13 @@
 build
 coverage
 drizzle
-prisma
-
 node_modules
 dist
 dist-ssr
+
+.prisma
+.sql
+.toml
 .env
 *.local
 .vscode/*
