@@ -3,6 +3,9 @@ import { randomUUID } from 'node:crypto';
 import { Gym, Prisma } from '@prisma/client';
 import { Decimal } from '@prisma/client/runtime/library';
 
+import { env } from '@/env';
+import { getDistanceBetweenCoordinates } from '@/utils/get-distance-between-coordinates';
+
 import { GymRepository } from '../interfaces/interface-gym.repository';
 
 export class InMemoryGymRepository implements GymRepository {
@@ -18,6 +21,21 @@ export class InMemoryGymRepository implements GymRepository {
 
   async listGymsByQuery(query: string, page: number): Promise<Gym[]> {
     const gyms = this.items.filter((item) => item.name.includes(query)).slice((page - 1) * 20, page * 20);
+
+    return gyms;
+  }
+
+  async listNearbyGyms(userLatitude: number, userLongitude: number): Promise<Gym[]> {
+    const gyms = this.items.filter((gym) => {
+      const distanceBetweenUserAndGym = getDistanceBetweenCoordinates(
+        { latitude: userLatitude, longitude: userLongitude },
+        { latitude: gym.latitude.toNumber(), longitude: gym.longitude.toNumber() },
+      );
+
+      if (distanceBetweenUserAndGym <= env.MAX_DISTANCE_NEARBY_IN_KILOMETERS) {
+        return gym;
+      }
+    });
 
     return gyms;
   }

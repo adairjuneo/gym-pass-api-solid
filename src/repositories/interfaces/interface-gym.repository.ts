@@ -4,4 +4,5 @@ export interface GymRepository {
   create(data: Prisma.GymUncheckedCreateInput): Promise<Gym>;
   findById(gymId: string): Promise<Gym | null>;
   listGymsByQuery(query: string, page: number): Promise<Gym[]>;
+  listNearbyGyms(userLatitude: number, userLongitude: number): Promise<Gym[]>;
 }
