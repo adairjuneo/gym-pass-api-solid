@@ -17,7 +17,7 @@ software nasça dentro de uma empresa. **Deve ser possível...**
 - [x] Deve ser possível o usuário buscar academias próximas (até 10km);
 - [x] Deve ser possível o usuário buscar academias pelo nome;
 - [x] Deve ser possível o usuário realizar check-ins em uma academia;
-- [ ] Deve ser possível validar o check-in de um usuário;
+- [x] Deve ser possível validar o check-in de um usuário;
 
 ## RNs (Regras de Negócio)
 
