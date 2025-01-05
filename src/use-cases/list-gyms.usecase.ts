@@ -1,6 +1,7 @@
 import { Gym } from '@prisma/client';
 
 import { GymRepository } from '@/repositories/interfaces/gym.interface';
+import { PrismaGymsRepository } from '@/repositories/prisma/gyms.repository';
 
 interface ListGymsUseCaseRequest {
   query: string;
@@ -11,7 +12,7 @@ interface ListGymsUseCaseResponse {
   gyms: Gym[];
 }
 
-export class ListGymsUseCase {
+class ListGymsUseCase {
   constructor(private gymRepository: GymRepository) {}
 
   async execute(data: ListGymsUseCaseRequest): Promise<ListGymsUseCaseResponse> {
@@ -22,3 +23,12 @@ export class ListGymsUseCase {
     return { gyms };
   }
 }
+
+const makeListGymsUseCase = () => {
+  const gymRepository = new PrismaGymsRepository();
+  const listGymsUseCase = new ListGymsUseCase(gymRepository);
+
+  return listGymsUseCase;
+};
+
+export { ListGymsUseCase, makeListGymsUseCase };

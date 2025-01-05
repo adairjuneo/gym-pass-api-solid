@@ -1,6 +1,7 @@
 import { User } from '@prisma/client';
 
 import { UsersRepository } from '@/repositories/interfaces/users.interface';
+import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users.repository';
 
 import { ResourceNotFoundError } from './errors/resource-not-found.error';
 
@@ -12,7 +13,7 @@ interface UserProfileUseCaseResponse {
   user: User;
 }
 
-export class UserProfileUseCase {
+class UserProfileUseCase {
   constructor(private usersRespository: UsersRepository) {}
   async execute(data: UserProfileUseCaseRequest): Promise<UserProfileUseCaseResponse> {
     const { id } = data;
@@ -26,3 +27,12 @@ export class UserProfileUseCase {
     return { user };
   }
 }
+
+const makeUserProfileUseCase = () => {
+  const userRepository = new PrismaUsersRepository();
+  const userProfileUseCase = new UserProfileUseCase(userRepository);
+
+  return userProfileUseCase;
+};
+
+export { makeUserProfileUseCase, UserProfileUseCase };

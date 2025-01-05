@@ -1,6 +1,7 @@
 import { CheckIn } from '@prisma/client';
 
 import { CheckInRepository } from '@/repositories/interfaces/check-in.interface';
+import { PrismaCheckInsRepository } from '@/repositories/prisma/prisma-check-ins.repository';
 
 interface ListCheckInsHistoryUseCaseRequest {
   userId: string;
@@ -11,7 +12,7 @@ interface ListCheckInsHistoryUseCaseResponse {
   checkIns: CheckIn[];
 }
 
-export class ListCheckInsHistoryUseCase {
+class ListCheckInsHistoryUseCase {
   constructor(private checkInRespository: CheckInRepository) {}
   async execute(data: ListCheckInsHistoryUseCaseRequest): Promise<ListCheckInsHistoryUseCaseResponse> {
     const { userId, page } = data;
@@ -21,3 +22,12 @@ export class ListCheckInsHistoryUseCase {
     return { checkIns };
   }
 }
+
+const makeListCheckInsHistoryUseCase = () => {
+  const checkInRespository = new PrismaCheckInsRepository();
+  const listCheckInsHistoryUseCase = new ListCheckInsHistoryUseCase(checkInRespository);
+
+  return listCheckInsHistoryUseCase;
+};
+
+export { ListCheckInsHistoryUseCase, makeListCheckInsHistoryUseCase };

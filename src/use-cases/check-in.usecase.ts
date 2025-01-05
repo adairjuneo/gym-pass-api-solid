@@ -3,6 +3,8 @@ import { CheckIn } from '@prisma/client';
 import { env } from '@/env';
 import { CheckInRepository } from '@/repositories/interfaces/check-in.interface';
 import { GymRepository } from '@/repositories/interfaces/gym.interface';
+import { PrismaGymsRepository } from '@/repositories/prisma/gyms.repository';
+import { PrismaCheckInsRepository } from '@/repositories/prisma/prisma-check-ins.repository';
 import { getDistanceBetweenCoordinates } from '@/utils/get-distance-between-coordinates';
 
 import { MaxDistanceError } from './errors/max-distance.error';
@@ -20,7 +22,7 @@ interface CheckInUseCaseResponse {
   checkIn: CheckIn;
 }
 
-export class CheckInUseCase {
+class CheckInUseCase {
   constructor(
     private checkInRespository: CheckInRepository,
     private gymRespository: GymRepository,
@@ -60,3 +62,13 @@ export class CheckInUseCase {
     return { checkIn };
   }
 }
+
+const makeCheckInUseCase = () => {
+  const gymRespository = new PrismaGymsRepository();
+  const checkInRespository = new PrismaCheckInsRepository();
+  const listGymsUseCase = new CheckInUseCase(checkInRespository, gymRespository);
+
+  return listGymsUseCase;
+};
+
+export { CheckInUseCase, makeCheckInUseCase };

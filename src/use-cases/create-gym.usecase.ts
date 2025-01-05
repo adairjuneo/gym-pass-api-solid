@@ -1,6 +1,7 @@
 import { Gym } from '@prisma/client';
 
 import { GymRepository } from '@/repositories/interfaces/gym.interface';
+import { PrismaGymsRepository } from '@/repositories/prisma/gyms.repository';
 
 interface CreateGymUseCaseRequest {
   name: string;
@@ -14,7 +15,7 @@ interface CreateGymUseCaseResponse {
   gym: Gym;
 }
 
-export class CreateGymUseCase {
+class CreateGymUseCase {
   constructor(private gymRepository: GymRepository) {}
 
   async execute(data: CreateGymUseCaseRequest): Promise<CreateGymUseCaseResponse> {
@@ -31,3 +32,12 @@ export class CreateGymUseCase {
     return { gym };
   }
 }
+
+const makeCreateGymUseCase = () => {
+  const gymRepository = new PrismaGymsRepository();
+  const createGymUseCase = new CreateGymUseCase(gymRepository);
+
+  return createGymUseCase;
+};
+
+export { CreateGymUseCase, makeCreateGymUseCase };
