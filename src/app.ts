@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import fastifyJwt from '@fastify/jwt';
 import fastify from 'fastify';
 import _ from 'lodash';
 import { ZodError } from 'zod';
@@ -42,6 +43,11 @@ app.addHook('preHandler', (req, _reply, done) => {
   };
 
   done();
+});
+
+// JWT
+app.register(fastifyJwt, {
+  secret: env.JWT_SECRET,
 });
 
 // Routes
