@@ -39,7 +39,7 @@ para serem aplicados no desenvolvimento.
 - [x] A senha do usuário precisa estar criptografada;
 - [x] Os dados da aplicação precisam estar persistidos em um banco de dados PostgreSQL;
 - [x] Todas as listas de dados precisam estar paginadas com 20 itens por página;
-- [ ] O usuário deve ser identificado por um JWT(JSON Web Token);
+- [x] O usuário deve ser identificado por um JWT(JSON Web Token);
 
 _This repository is part of my practical studies about software engineering and development._
 [dev-juneo](https://github.com/adairjuneoaf)
