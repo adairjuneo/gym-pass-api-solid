@@ -12,3 +12,4 @@ dist-ssr
 .env
 *.local
 .vscode/*
+sheme.prisma
