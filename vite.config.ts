@@ -6,5 +6,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [tsConfigPaths()],
   test: {
     env: loadEnv(mode, process.cwd(), ''),
+    environmentMatchGlobs: [['src/http/controllers/**', 'prisma']],
   },
 }));
