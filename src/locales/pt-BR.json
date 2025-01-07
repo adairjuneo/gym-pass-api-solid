@@ -9,6 +9,7 @@
     "min": "Máximo de {{min}} caracteres.",
     "required": "Obrigatório",
     "email": "Deve ser um e-mail válido.",
+    "uuid": "Deve ser um UUID válido.",
     "gym": {
       "requiredLatitude": "Precisa ser uma medida de Latitude.",
       "requiredLongitude": "Precisa ser uma medida de Longitude."

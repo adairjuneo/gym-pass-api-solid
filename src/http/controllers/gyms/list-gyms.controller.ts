@@ -4,12 +4,12 @@ import { z } from 'zod';
 import { makeListGymsUseCase } from '@/use-cases/list-gyms.usecase';
 
 export const listGyms = async (request: FastifyRequest, reply: FastifyReply) => {
-  const listGymsParamsSchema = z.object({
+  const listGymsQuerySchema = z.object({
     query: z.string(),
     page: z.coerce.number().min(1).default(1),
   });
 
-  const { page, query } = listGymsParamsSchema.parse(request.query);
+  const { page, query } = listGymsQuerySchema.parse(request.query);
 
   const listGyms = makeListGymsUseCase();
 

@@ -6,4 +6,5 @@ import { usersRoutes } from '../controllers/users/routes';
 export const appRoutes = async (app: FastifyInstance) => {
   app.register(usersRoutes, { prefix: '/users' });
   app.register(gymsRoutes, { prefix: '/gyms' });
+  app.register(gymsRoutes, { prefix: '/check-ins' });
 };
