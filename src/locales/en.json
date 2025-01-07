@@ -8,6 +8,10 @@
     "min": "Minimum of {{min}} characters",
     "max": "Mínimo de {{max}} characters.",
     "required": "Required.",
-    "email": "Must be valid e-mail."
+    "email": "Must be valid e-mail.",
+    "gym": {
+      "requiredLatitude": "Must be a measurement Latitude.",
+      "requiredLongitude": "Must be a  measurement Longitude."
+    }
   }
 }
