@@ -27,9 +27,9 @@ requisito funcional pode ou não ser executado. **O usuário não pode/deve...**
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
 - [x] O usuário não pode fazer 2 check-ins no mesmo dia;
 - [x] O usuário não pode fazer check-ins se não estiver perto(100m) da academia;
-- [ ] Academias só podem ser cadastradas por administradores;
+- [x] Academias só podem ser cadastradas por administradores;
 - [x] O check-in só pode ser validado até 20 minutos após criado;
-- [ ] O check-in só pode ser validado por administradores;
+- [x] O check-in só pode ser validado por administradores;
 
 ## RNFs (Requisitos não-funcionais)
 
