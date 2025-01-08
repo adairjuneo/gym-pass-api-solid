@@ -19,7 +19,7 @@ describe('Authenticate User e2e', () => {
       password: '123456789',
     });
 
-    const response = await request(app.server).post('/sessions').send({
+    const response = await request(app.server).post('/users/sessions').send({
       email: 'johndoe@acme.com',
       password: '123456789',
     });
