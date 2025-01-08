@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import fastifyCookie from '@fastify/cookie';
 import fastifyJwt from '@fastify/jwt';
 import fastify from 'fastify';
 import _ from 'lodash';
@@ -9,7 +10,7 @@ import { ZodError } from 'zod';
 import { env } from './env';
 import { appRoutes } from './http/routes';
 
-export const app = fastify({ logger: true });
+export const app = fastify({ logger: false });
 
 type Translations = Record<string, Record<string, string>>;
 
@@ -48,7 +49,17 @@ app.addHook('preHandler', (req, _reply, done) => {
 // JWT
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
+  sign: {
+    expiresIn: '6h',
+  },
+  cookie: {
+    cookieName: 'refreshToken',
+    signed: false,
+  },
 });
+
+// Cookies Handler
+app.register(fastifyCookie);
 
 // Routes
 app.register(appRoutes);

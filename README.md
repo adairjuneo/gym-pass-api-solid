@@ -40,6 +40,7 @@ para serem aplicados no desenvolvimento.
 - [x] Os dados da aplicação precisam estar persistidos em um banco de dados PostgreSQL;
 - [x] Todas as listas de dados precisam estar paginadas com 20 itens por página;
 - [x] O usuário deve ser identificado por um JWT(JSON Web Token);
+- [x] 🆕 Implementado metodologia de refresh-token para auxiliar o front-end;
 
 _This repository is part of my practical studies about software engineering and development._
 [dev-juneo](https://github.com/adairjuneoaf)
