@@ -7,7 +7,7 @@ export const createCheckIn = async (request: FastifyRequest, reply: FastifyReply
   const { t } = request;
 
   const createCheckInParamsSchema = z.object({
-    gymId: z.string({ message: t('validation.required') }).uuid({ message: t('validation.uuid') }),
+    gymId: z.string({ message: t('validation.required') }).cuid({ message: t('validation.cuid') }),
   });
 
   const createCheckInBodySchema = z.object({
