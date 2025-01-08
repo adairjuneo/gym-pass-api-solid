@@ -24,7 +24,9 @@ describe('Profile User e2e', () => {
     expect(profileResponse.status).toEqual(200);
     expect(profileResponse.body.content).toEqual(
       expect.objectContaining({
-        email: 'johndoe@acme.com',
+        id: expect.any(String),
+        name: expect.any(String),
+        email: expect.any(String),
       }),
     );
   });

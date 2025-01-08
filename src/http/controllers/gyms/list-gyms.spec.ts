@@ -15,7 +15,7 @@ describe('List Gyms e2e', () => {
   });
 
   it('should be able to list and search a gym', async () => {
-    const { token } = await createAndAuthenticateUser(app);
+    const { token } = await createAndAuthenticateUser(app, true);
 
     for (let i = 0; i < 3; i++) {
       const mockGym = {
