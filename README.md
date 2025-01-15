@@ -43,4 +43,4 @@ para serem aplicados no desenvolvimento.
 - [x] 🆕 Implementado metodologia de refresh-token para auxiliar o front-end;
 
 _This repository is part of my practical studies about software engineering and development._
-[dev-juneo](https://github.com/adairjuneoaf)
+[dev-juneo](https://github.com/adairjuneo)
